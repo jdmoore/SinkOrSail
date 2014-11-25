@@ -550,7 +550,6 @@ class Player(object):
                 if len(ship.valid) == 0:
                     guess.board.content.remove(ship)
                     print("You sank opponent's {}!".format(ship.kind))
-                    print(guess.board)
                 return True
         guess.display(" ")
         print(guess.board)
@@ -674,7 +673,7 @@ class AI(object):
                 print(guess.board)
                 return True
         # If guess misses enemy fleet:
-        if self.guide:
+        if len(self.guide) > 2:
             # Rotating the guide left after a miss switches the direction of
             # future guesses popped from guide.
             self.guide.rotate(-1)
@@ -733,14 +732,14 @@ def play_loop():
         player.input_guess(ai)
         input("<Press Enter>\n-------------")
         if len(ai.board.content) == 0:
-            print("Winner!")
+            print("Winner!n\")
             break
         
         ai.guess(player)
         input("<Press Enter>\n-------------")
         if len(player.board.content) == 0:
             print(player.board)
-            print("You Lose.")
+            print("You Lose.n\")
             break
 
 
