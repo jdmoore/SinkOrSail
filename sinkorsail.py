@@ -732,14 +732,14 @@ def play_loop():
         player.input_guess(ai)
         input("<Press Enter>\n-------------")
         if len(ai.board.content) == 0:
-            print("Winner!n\")
+            print("Winner!\n")
             break
         
         ai.guess(player)
         input("<Press Enter>\n-------------")
         if len(player.board.content) == 0:
             print(player.board)
-            print("You Lose.n\")
+            print("You Lose.\n")
             break
 
 
